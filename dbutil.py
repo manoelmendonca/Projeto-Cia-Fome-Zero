@@ -6,7 +6,7 @@
 # Arquivo . .: DBUTIL.PY
 # Finalidade : Classe para acesso aos dados
 #                                                              Start: 19.6.2023
-#                  manoelmendonca@hotmail.com                   Last: 24.6.2023
+#                  manoelmendonca@hotmail.com                   Last: 28.6.2023
 #------------------------------------------------------------------------------
 
 import pandas as pd
@@ -242,7 +242,7 @@ class dbutil():
 
     def best_restaurants_from_cuisine(self, cuisine:str, inDF: pd.core.frame.DataFrame) -> pd.core.frame.DataFrame:
         # Select all regs of the 'cuisine'
-        colunas = ['restaurant_id','restaurant_name','unique_cuisine','aggregate_rating']
+        colunas = ['restaurant_id','restaurant_name','unique_cuisine','aggregate_rating','country_name']
         linhas = (inDF['unique_cuisine']==cuisine)
         df2 = inDF.loc[linhas, colunas].copy()
         # Find the best rating

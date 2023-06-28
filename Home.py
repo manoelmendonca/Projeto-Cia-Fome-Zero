@@ -94,7 +94,7 @@ class app_home():
 
         #..... Título
         with st.container():
-            col1, col2, col3, col4 = st.columns( 4 )
+            col1, col2, col3 = st.columns( 3 )
             with col1:
                 image_path = 'Restaurant_Icon.png'
                 image = Image.open( image_path )
@@ -107,7 +107,7 @@ class app_home():
 
         #..... Indicadores gerais de desempenho
         st.markdown("""---""")
-        st.write( "#### Nossa plataforma vem alcançando as seguintes marcas:" )
+        st.write( "### Nossa plataforma vem alcançando as seguintes marcas:" )
 
         with st.container():
             col1, col2, col3, col4, col5 = st.columns(5)
