@@ -142,19 +142,19 @@ class app_culinarias():
             col0, col1, col2, col3, col4 = st.columns( 5 )
             with col0:
                 st.write('#### :blue['+str(df20.loc[0,'aggregate_rating'])+']/5.0')
-                st.write(df20.loc[0,'country_name'])
+                st.caption('Em: '+df20.loc[0,'country_name'])
             with col1:
                 st.write('#### :blue['+str(df21.loc[0,'aggregate_rating'])+']/5.0')
-                st.write(df21.loc[0,'country_name'])
+                st.caption('Em: '+df21.loc[0,'country_name'])
             with col2:
                 st.write('#### :blue['+str(df22.loc[0,'aggregate_rating'])+']/5.0')
-                st.write(df22.loc[0,'country_name'])
+                st.caption('Em: '+df22.loc[0,'country_name'])
             with col3:
                 st.write('#### :blue['+str(df23.loc[0,'aggregate_rating'])+']/5.0')
-                st.write(df23.loc[0,'country_name'])
+                st.caption('Em: '+df23.loc[0,'country_name'])
             with col4:
                 st.write('#### :blue['+str(df24.loc[0,'aggregate_rating'])+']/5.0')
-                st.write(df24.loc[0,'country_name'])
+                st.caption('Em: '+df24.loc[0,'country_name'])
 
         #..... Container-2: tabela - Top-10 restaurantes
         st.divider()
