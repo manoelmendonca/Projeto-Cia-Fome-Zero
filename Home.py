@@ -25,6 +25,7 @@ import streamlit as st
 from PIL import Image
 import folium
 from streamlit_folium import folium_static
+from locale import atof, setlocale, LC_NUMERIC
 
 from dbutil import dbutil
 
@@ -53,14 +54,16 @@ class app_home():
         st.sidebar.write('Escolha os **PAÍSES** cujas **INFORMAÇÕES** deseja visualizar:')
 
         # Radio Button - todos ou só alguns países...
-        qty_countries = st.sidebar.radio("", ('Os principais','Todos'), label_visibility="collapsed")
+        the_countries = self.util.get_all_countries()
+        default_countries = self.util.countries_with_more_restaurants( 6 )
+        qty_countries = st.sidebar.radio(
+            "", 
+            ('Os principais','Todos'), 
+            label_visibility="collapsed" )
         if qty_countries == 'Todos':
-            default_countries = self.util.get_all_countries()
-        else:
-            default_countries = self.util.countries_with_more_restaurants( 6 )
+            default_countries = the_countries
 
         # Critérios de filtragem
-        the_countries = self.util.get_all_countries()
         country_options = st.sidebar.multiselect(
             label='Seleção:',
             options=the_countries,
@@ -77,6 +80,8 @@ class app_home():
             st.sidebar.write( 'Download OK :thumbsup:' )
 
         #..... Assinatura do autor
+        st.sidebar.markdown("""---""")
+        st.sidebar.write('')
         st.sidebar.caption('Autor.....: Manoel Mendonça - 2023')
         st.sidebar.caption(':blue[manoelmendonca@hotmail.com]')
         st.sidebar.caption('[menezes.mendonca.nom.br](http://menezes.mendonca.nom.br)')
@@ -89,7 +94,7 @@ class app_home():
 
         #..... Título
         with st.container():
-            col1, col2, col3, col4, col5 = st.columns( 5 )
+            col1, col2, col3, col4 = st.columns( 4 )
             with col1:
                 image_path = 'Restaurant_Icon.png'
                 image = Image.open( image_path )
@@ -113,27 +118,30 @@ class app_home():
             with col3:
                 st.write('**Restaurantes cadastrados**')
             with col4:
-                st.write('**Avaliações feitas na plataforma** (x 1k)')
+                st.write('**Avaliações feitas na plataforma**')
             with col5:
                 st.write('**Tipos de culinárias ofertadas**')
 
         with st.container():
             col1, col2, col3, col4, col5 = st.columns(5)
             with col1:
-                tot = len( self.dfhome['country_name'].unique() )
+                tot = len( self.dfhome['country_name'].unique() )     # países
                 st.markdown('## **'+str(tot)+'**')
             with col2:
-                tot = len( self.dfhome['city'].unique() )
+                tot = len( self.dfhome['city'].unique() )             # cidades
                 st.markdown('## **'+str(tot)+'**')
             with col3:
-                tot = len( self.dfhome['restaurant_name'].unique() )
-                st.markdown('## **'+str(tot)+'**')
+                tot = len( self.dfhome['restaurant_name'].unique() )  # restaurantes
+                #txt = '{:,.0f}'.format(tot)
+                txt = self.num_to_str( tot )
+                st.markdown('## **'+txt+'**')
             with col4:
-                df1 = self.dfhome['votes']
-                tot = round( df1.sum() / 1000, 1 )
-                st.markdown('## **'+str(tot)+'**')
+                df1 = self.dfhome['votes']                            # avaliações
+                tot = df1.sum()
+                txt = self.num_to_str( tot )
+                st.markdown('## **'+txt+'**')
             with col5:
-                tot = len( self.dfhome['unique_cuisine'].unique() )
+                tot = len( self.dfhome['unique_cuisine'].unique() )   # culinárias
                 st.markdown('## **'+str(tot)+'**')
 
         #..... MAPA MUNDI
@@ -164,6 +172,24 @@ class app_home():
         folium_static( CityMap, width=1024, height=600 )
         # FIM
         return
+
+    def num_to_str( self, inNUM: float ) -> str:
+        txt = ''
+        # Se o número for menor que 10.000, só converte e pronto
+        if inNUM < 10000:
+            txt = '{:,.0f}'.format( inNUM )
+        # Se o número for entre 10.000 e 999.999, divide por mil e responde: 10 mil
+        elif inNUM < 999999:
+            num = inNUM / 1000
+            txt = '{:,.1f}'.format( num ) + ' mil'
+        # Se o número for menor que bilhão, divide por milhao e responde: 13 milhões
+        elif inNUM < 999999999:
+            num = inNUM / 1000000
+            txt = '{:,.2f}'.format( num ) + ' mi'
+        else:
+            num = inNUM / 1000000000
+            txt = '{:,.2f}'.format( num ) + ' bi'
+        return txt
 
 #--------- MAIN HOME PROCEDURE ------------------------------------------------
 def main():
