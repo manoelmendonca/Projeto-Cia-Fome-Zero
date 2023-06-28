@@ -1,5 +1,6 @@
 folium==0.14.0
 haversine==2.7.0
+inflection==0.5.1
 matplotlib==3.5.3
 matplotlib-inline==0.1.6
 numpy==1.24.3
