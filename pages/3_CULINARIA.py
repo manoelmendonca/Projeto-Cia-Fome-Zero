@@ -42,14 +42,16 @@ class app_culinarias():
         st.sidebar.write('Escolha os **PAÍSES** cujas **CIDADES** deseja visualizar:')
 
         # Radio Button - todos ou só alguns países...
-        qty_countries = st.sidebar.radio("", ('Os principais','Todos'), label_visibility="collapsed")
+        the_countries = self.util.get_all_countries()
+        default_countries = self.util.countries_with_more_restaurants( 6 )
+        qty_countries = st.sidebar.radio(
+            "", 
+            ('Os principais','Todos'), 
+            label_visibility="collapsed" )
         if qty_countries == 'Todos':
-            default_countries = self.util.get_all_countries()
-        else:
-            default_countries = self.util.countries_with_more_restaurants( 6 )
+            default_countries = the_countries
 
         #..... Filtro-1: por países
-        the_countries = self.util.get_all_countries()
         country_options = st.sidebar.multiselect(
             label='Seleção de países:',
             options=the_countries,
@@ -70,13 +72,12 @@ class app_culinarias():
         st.sidebar.write('Escolha as **CULINÁRIAS** que deseja visualizar:')
 
         # Radio Button - todos ou só alguns países...
+        the_cuisines = self.util.get_all_cuisines()
+        default_cuisines = self.util.cuisines_with_more_restaurants( 12, self.util.dtframe )
         qty_cuisines = st.sidebar.radio("", ('As principais','Todas'), label_visibility="collapsed")
         if qty_cuisines == 'Todas':
-            default_cuisines = self.util.get_all_cuisines()
-        else:
-            default_cuisines = self.util.cuisines_with_more_restaurants( 12, self.util.dtframe )
+            default_cuisines = the_cuisines
 
-        the_cuisines = self.util.get_all_cuisines()
         cuisine_options = st.sidebar.multiselect(
             label='Seleção de Culinárias:',
             options=the_cuisines,
@@ -85,6 +86,7 @@ class app_culinarias():
         self.dfculinarias = self.util.get_items_with_these_cuisines(self.dfculinarias, cuisine_options)
 
         #..... Assinatura do autor
+        st.sidebar.markdown("""---""")
         st.sidebar.write('')
         st.sidebar.caption('Autor.....: Manoel Mendonça - 2023')
         st.sidebar.caption(':blue[manoelmendonca@hotmail.com]')
@@ -98,12 +100,13 @@ class app_culinarias():
 
         #..... Título
         with st.container():
-            col1, col2, col3, col4, col5 = st.columns( 5 )
+            col1, col2, col3, col4 = st.columns( 4 )
             with col1:
                 image_path = 'Restaurant_Icon.png'
                 image = Image.open( image_path )
                 st.image( image, width=160 )
             with col2:
+                st.write('# Fome Zero!')
                 st.write('# Visão Culinária')
 
         #..... Container-1: 5 boxes - melhores restaurantes dos principais tipos culinários
@@ -116,31 +119,31 @@ class app_culinarias():
                 st.write('Tipo: **' + cuisines[0] + '**')
                 df2 = self.util.best_restaurants_from_cuisine(cuisines[0],self.dfculinarias)
                 st.write('#### '+df2.loc[0,'restaurant_name'])
-                st.write('#### '+str(df2.loc[0,'aggregate_rating']))
+                st.write('#### '+str(df2.loc[0,'aggregate_rating'])+'/5.0')
 
             with col2:
                 st.write('Tipo: **' + cuisines[1] + '**')
                 df2 = self.util.best_restaurants_from_cuisine(cuisines[1],self.dfculinarias)
                 st.write('#### '+df2.loc[0,'restaurant_name'])
-                st.write('#### '+str(df2.loc[0,'aggregate_rating']))
+                st.write('#### '+str(df2.loc[0,'aggregate_rating'])+'/5.0')
 
             with col3:
                 st.write('Tipo: **' + cuisines[2] + '**')
                 df2 = self.util.best_restaurants_from_cuisine(cuisines[2],self.dfculinarias)
                 st.write('#### '+df2.loc[0,'restaurant_name'])
-                st.write('#### '+str(df2.loc[0,'aggregate_rating']))
+                st.write('#### '+str(df2.loc[0,'aggregate_rating'])+'/5.0')
 
             with col4:
                 st.write('Tipo: **' + cuisines[3] + '**')
                 df2 = self.util.best_restaurants_from_cuisine(cuisines[3],self.dfculinarias)
                 st.write('#### '+df2.loc[0,'restaurant_name'])
-                st.write('#### '+str(df2.loc[0,'aggregate_rating']))
+                st.write('#### '+str(df2.loc[0,'aggregate_rating'])+'/5.0')
 
             with col5:
                 st.write('Tipo: **' + cuisines[4] + '**')
                 df2 = self.util.best_restaurants_from_cuisine(cuisines[4],self.dfculinarias)
                 st.write('#### '+df2.loc[0,'restaurant_name'])
-                st.write('#### '+str(df2.loc[0,'aggregate_rating']))
+                st.write('#### '+str(df2.loc[0,'aggregate_rating'])+'/5.0')
 
         #..... Container-2: tabela - Top-10 restaurantes
         st.divider()

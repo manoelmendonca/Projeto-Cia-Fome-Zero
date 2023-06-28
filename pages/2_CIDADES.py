@@ -45,14 +45,16 @@ class app_cidades():
         st.sidebar.write('Escolha os **PAÍSES** cujas **CIDADES** deseja visualizar:')
 
         # Radio Button - todos ou só alguns países...
-        qty_countries = st.sidebar.radio("", ('Os principais','Todos'), label_visibility="collapsed")
+        the_countries = self.util.get_all_countries()
+        default_countries = self.util.countries_with_more_restaurants( 6 )
+        qty_countries = st.sidebar.radio(
+            "", 
+            ('Os principais','Todos'), 
+            label_visibility="collapsed" )
         if qty_countries == 'Todos':
-            default_countries = self.util.get_all_countries()
-        else:
-            default_countries = self.util.countries_with_more_restaurants( 6 )
+            default_countries = the_countries
 
         # Critérios de filtragem
-        the_countries = self.util.get_all_countries()
         country_options = st.sidebar.multiselect(
             label='Seleção:',
             options=the_countries,
@@ -61,6 +63,7 @@ class app_cidades():
         self.dfcidades = self.util.get_items_with_these_countries(country_options)
 
         #..... Assinatura do autor
+        st.sidebar.markdown("""---""")
         st.sidebar.write('')
         st.sidebar.caption('Autor.....: Manoel Mendonça - 2023')
         st.sidebar.caption(':blue[manoelmendonca@hotmail.com]')
@@ -74,12 +77,13 @@ class app_cidades():
 
         #..... Título
         with st.container():
-            col1, col2, col3, col4, col5 = st.columns( 5 )
+            col1, col2, col3, col4 = st.columns( 4 )
             with col1:
                 image_path = 'Restaurant_Icon.png'
                 image = Image.open( image_path )
                 st.image( image, width=160 )
             with col2:
+                st.write('# Fome Zero!')
                 st.title('Visão Cidades')
 
         #..... Gráfico-1: histograma - Top-10 cidades com mais restaurantes registrados
