@@ -73,7 +73,7 @@ class app_paises():
 
         #..... Título
         with st.container():
-            col1, col2, col3, col4 = st.columns( 4 )
+            col1, col2, col3 = st.columns( 3 )
             with col1:
                 image_path = 'Restaurant_Icon.png'
                 image = Image.open( image_path )
@@ -358,7 +358,7 @@ class dbutil():
 
     def best_restaurants_from_cuisine(self, cuisine:str, inDF: pd.core.frame.DataFrame) -> pd.core.frame.DataFrame:
         # Select all regs of the 'cuisine'
-        colunas = ['restaurant_id','restaurant_name','unique_cuisine','aggregate_rating']
+        colunas = ['restaurant_id','restaurant_name','unique_cuisine','aggregate_rating','country_name']
         linhas = (inDF['unique_cuisine']==cuisine)
         df2 = inDF.loc[linhas, colunas].copy()
         # Find the best rating

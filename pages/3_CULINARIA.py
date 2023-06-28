@@ -100,7 +100,7 @@ class app_culinarias():
 
         #..... Título
         with st.container():
-            col1, col2, col3, col4 = st.columns( 4 )
+            col1, col2, col3 = st.columns( 3 )
             with col1:
                 image_path = 'Restaurant_Icon.png'
                 image = Image.open( image_path )
@@ -111,39 +111,50 @@ class app_culinarias():
 
         #..... Container-1: 5 boxes - melhores restaurantes dos principais tipos culinários
         st.divider()
+        st.write('### Melhores Restaurantes por Tipo Culinário')
+
+        cuisines = self.util.cuisines_with_more_restaurants( 5, self.dfculinarias  )
+        df20 = self.util.best_restaurants_from_cuisine(cuisines[0],self.dfculinarias)
+        df21 = self.util.best_restaurants_from_cuisine(cuisines[1],self.dfculinarias)
+        df22 = self.util.best_restaurants_from_cuisine(cuisines[2],self.dfculinarias)
+        df23 = self.util.best_restaurants_from_cuisine(cuisines[3],self.dfculinarias)
+        df24 = self.util.best_restaurants_from_cuisine(cuisines[4],self.dfculinarias)
+
         with st.container():
-            st.write('### Melhores Restaurantes por Tipo Culinário')
-            cuisines = self.util.cuisines_with_more_restaurants( 5, self.dfculinarias  )
-            col1, col2, col3, col4, col5 = st.columns( 5 )
-            with col1:
+            col0, col1, col2, col3, col4 = st.columns(5)
+            with col0:
                 st.write('Tipo: **' + cuisines[0] + '**')
-                df2 = self.util.best_restaurants_from_cuisine(cuisines[0],self.dfculinarias)
-                st.write('#### '+df2.loc[0,'restaurant_name'])
-                st.write('#### '+str(df2.loc[0,'aggregate_rating'])+'/5.0')
-
-            with col2:
+                st.write('#### '+df20.loc[0,'restaurant_name'])
+            with col1:
                 st.write('Tipo: **' + cuisines[1] + '**')
-                df2 = self.util.best_restaurants_from_cuisine(cuisines[1],self.dfculinarias)
-                st.write('#### '+df2.loc[0,'restaurant_name'])
-                st.write('#### '+str(df2.loc[0,'aggregate_rating'])+'/5.0')
-
-            with col3:
+                st.write('#### '+df21.loc[0,'restaurant_name'])
+            with col2:
                 st.write('Tipo: **' + cuisines[2] + '**')
-                df2 = self.util.best_restaurants_from_cuisine(cuisines[2],self.dfculinarias)
-                st.write('#### '+df2.loc[0,'restaurant_name'])
-                st.write('#### '+str(df2.loc[0,'aggregate_rating'])+'/5.0')
-
-            with col4:
+                st.write('#### '+df22.loc[0,'restaurant_name'])
+            with col3:
                 st.write('Tipo: **' + cuisines[3] + '**')
-                df2 = self.util.best_restaurants_from_cuisine(cuisines[3],self.dfculinarias)
-                st.write('#### '+df2.loc[0,'restaurant_name'])
-                st.write('#### '+str(df2.loc[0,'aggregate_rating'])+'/5.0')
-
-            with col5:
+                st.write('#### '+df23.loc[0,'restaurant_name'])
+            with col4:
                 st.write('Tipo: **' + cuisines[4] + '**')
-                df2 = self.util.best_restaurants_from_cuisine(cuisines[4],self.dfculinarias)
-                st.write('#### '+df2.loc[0,'restaurant_name'])
-                st.write('#### '+str(df2.loc[0,'aggregate_rating'])+'/5.0')
+                st.write('#### '+df24.loc[0,'restaurant_name'])
+
+        with st.container():
+            col0, col1, col2, col3, col4 = st.columns( 5 )
+            with col0:
+                st.write('#### :blue['+str(df20.loc[0,'aggregate_rating'])+']/5.0')
+                st.write(df20.loc[0,'country_name'])
+            with col1:
+                st.write('#### :blue['+str(df21.loc[0,'aggregate_rating'])+']/5.0')
+                st.write(df21.loc[0,'country_name'])
+            with col2:
+                st.write('#### :blue['+str(df22.loc[0,'aggregate_rating'])+']/5.0')
+                st.write(df22.loc[0,'country_name'])
+            with col3:
+                st.write('#### :blue['+str(df23.loc[0,'aggregate_rating'])+']/5.0')
+                st.write(df23.loc[0,'country_name'])
+            with col4:
+                st.write('#### :blue['+str(df24.loc[0,'aggregate_rating'])+']/5.0')
+                st.write(df24.loc[0,'country_name'])
 
         #..... Container-2: tabela - Top-10 restaurantes
         st.divider()
@@ -405,7 +416,7 @@ class dbutil():
 
     def best_restaurants_from_cuisine(self, cuisine:str, inDF: pd.core.frame.DataFrame) -> pd.core.frame.DataFrame:
         # Select all regs of the 'cuisine'
-        colunas = ['restaurant_id','restaurant_name','unique_cuisine','aggregate_rating']
+        colunas = ['restaurant_id','restaurant_name','unique_cuisine','aggregate_rating','country_name']
         linhas = (inDF['unique_cuisine']==cuisine)
         df2 = inDF.loc[linhas, colunas].copy()
         # Find the best rating
