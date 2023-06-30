@@ -51,9 +51,9 @@ Nesse contexto, o CEO da empresa necessita identificar os pontos chaves do empre
 
 # [2] AS PREMISSAS DO NEGÓCIO
 O desenvolvimento do projeto tomou por base as seguintes premissas:
-I - base de dados com informações de restaurantes localizados em 15 países.
-II - o modelo de negócio assumido foi do tipo marketplace.
-III - as três principais visões de negócio foram: visão países, visão cidades e visão culinárias.
+- I - base de dados com informações de restaurantes localizados em 15 países.
+- II - o modelo de negócio assumido foi do tipo marketplace.
+- III - as três principais visões de negócio foram: visão países, visão cidades e visão culinárias.
 
 # [3] ESTRATÉGIA DA SOLUÇÃO
 O painel estratégico foi desenvolvido utilizando as métricas que refletem as três principais visões do modelo de negócio da empresa, quais sejam: 
