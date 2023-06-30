@@ -63,36 +63,39 @@ O painel estratégico foi desenvolvido utilizando as métricas que refletem as t
 
 Cada visão está representada pelo seguinte conjunto de métricas:
 ## (1) Visão de Países:
-Quantidade de restaurantes registrados por país
-Quantidade de cidades registradas por país
-Quantidade média de avaliações por país
-Preço médio do prato para dois por país
+- Quantidade de restaurantes registrados por país
+- Quantidade de cidades registradas por país
+- Quantidade média de avaliações por país
+- Preço médio do prato para dois por país
 
 ## (2) Visão das Cidades:
-Cidades com mais restaurantes registrados
-Quantidade de restaurantes avaliados acima de 4,0 por cidade
-Quantidade de restaurantes avaliados abaixo de 2,5 por cidade
-Cidades com a maior quantidade de restaurantes com tipos culinários distintos
+- Cidades com mais restaurantes registrados
+- Quantidade de restaurantes avaliados acima de 4,0 por cidade
+- Quantidade de restaurantes avaliados abaixo de 2,5 por cidade
+- Cidades com a maior quantidade de restaurantes com tipos culinários distintos
 
 ## (3) Visão das Culinárias:
-Melhores restaurantes por tipo culinário
-Restaurantes melhor avaliados
-Tipos culinários melhor avaliados
-Tipos culinários pior avaliados
+- Melhores restaurantes por tipo culinário
+- Restaurantes melhor avaliados
+- Tipos culinários melhor avaliados
+- Tipos culinários pior avaliados
 
 # [4] TOP 3 INSIGHTS DE DADOS
-i) dos 5.904 restaurantes cadastrados em 15 países, a Índia com 3.120 e os EUA com 1.378 representam mais de 76% de todos os restaurantes neste marketplace. Portanto, nos demais 13 países há grande potencial de crescimento do negócio.
-ii) o hábito dos consumidores de avaliar os serviços se reflete no histograma da Quantidade Média de Avaliações por País. Dois países, cada qual possuidor de apenas 3 cidades cadastradas, encontram-se nos extremos deste histograma. De um lado, na Indonésia, os restaurantes recebem, em média 1.113 avaliações. De outro lado, no Brasil, os restaurantes recebem uma média de 12 avaliações.
-iii) entre países de economia desenvolvida, os números são também heterogêneos. Tomando como exemplo EUA e Inglaterra, os EUA têm aproximadamente: (a) 3,5 vezes mais restaurantes cadastrados, (b) 4,5 vezes mais cidades registradas, (c) 4 vezes mais avaliações por restaurante, (d) nenhum restaurante com avaliação abaixo de 2,5, (e) pelo menos 10 vezes mais cidades com restaurantes avaliados com nota acima de 4,0. A partir desses números, é possível direcionar campanhas para aumentar a presença da marca da empresa na Inglaterra.
+- i) dos 5.904 restaurantes cadastrados em 15 países, a Índia com 3.120 e os EUA com 1.378 representam mais de 76% de todos os restaurantes neste marketplace. Portanto, nos demais 13 países há grande potencial de crescimento do negócio.
+- ii) o hábito dos consumidores de avaliar os serviços se reflete no histograma da Quantidade Média de Avaliações por País. Dois países, cada qual possuidor de apenas 3 cidades cadastradas, encontram-se nos extremos deste histograma. De um lado, na Indonésia, os restaurantes recebem, em média 1.113 avaliações. De outro lado, no Brasil, os restaurantes recebem uma média de 12 avaliações.
+- iii) entre países de economia desenvolvida, os números são também heterogêneos. Tomando como exemplo EUA e Inglaterra, os EUA têm aproximadamente: (a) 3,5 vezes mais restaurantes cadastrados, (b) 4,5 vezes mais cidades registradas, (c) 4 vezes mais avaliações por restaurante, (d) nenhum restaurante com avaliação abaixo de 2,5, (e) pelo menos 10 vezes mais cidades com restaurantes avaliados com nota acima de 4,0. A partir desses números, é possível direcionar campanhas para aumentar a presença da marca da empresa na Inglaterra.
 
 # [5] O PRODUTO FINAL DO PROJETO
 É dado por um painel online, hospedado em uma Cloud e disponível para acesso em qualquer dispositivo conectado à internet.
 O painel pode ser acessado por meio do seguinte link: 
-https://fomezero-iw9um7ljd7.streamlit.app/
+- https://fomezero-iw9um7ljd7.streamlit.app/
 
 # [6] CONCLUSÃO
 O objetivo deste projeto foi o de criar um conjunto de gráficos e/ou tabelas para exibir as métricas do negócio da melhor forma possível para o CEO.
 No painel, a visão de países indica a existência de grande potencial para crescimento dos negócios.
 
 # [7] PRÓXIMOS PASSOS
-O projeto pode ser aprimorado para: (i) incluir novos filtros de informações, de modo a aumentar a funcionalidade para o usuário, (ii) adicionar novas visões de negócios, que permitam auxiliar a tomada de decisões gerenciais diferenciadas, de acordo com as características de cada país ou grupo de países, e (iii) criar novos indicadores, voltados seja para o crescimento do negócio, seja para o aprimoramento da qualidade do serviço prestado.
+O projeto pode ser aprimorado para: 
+- (i) incluir novos filtros de informações, de modo a aumentar a funcionalidade para o usuário,
+- (ii) adicionar novas visões de negócios, que permitam auxiliar a tomada de decisões gerenciais diferenciadas, de acordo com as características de cada país ou grupo de países, e
+- (iii) criar novos indicadores, voltados seja para o crescimento do negócio, seja para o aprimoramento da qualidade do serviço prestado.
