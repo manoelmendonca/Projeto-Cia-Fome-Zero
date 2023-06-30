@@ -2,7 +2,7 @@
 
 # [1] O PROBLEMA DE NEGÓCIO
 A empresa Fome Zero! é um marketplace de restaurentes, tendo como núcleo do seu negócio propiciar o encontro e as negociações entre clientes e restaurantes. Para tanto, a empresa possui uma plataforma tecnológica por meio da qual são disponibilizadas informações referentes aos restaurantes, dentre as quais o endereço, tipo de culinária servida, se possui reservas, se faz entregas e também uma nota de avaliação dos serviços e produtos de cada restaurante.
-Nesse contexto, o CEO da empresa necessita identificar os pontos chaves da empresa, contando para isso com o trabalho do cientista de dados, que deve buscar nos dados as respostas às questões de interesse para o desenvolvimento do negócio, dentre as quais:
+Nesse contexto, o CEO da empresa necessita identificar os pontos chaves do empreendimento, contando para isso com o trabalho do cientista de dados, que deve buscar nos dados as respostas às questões de interesse para o desenvolvimento do negócio, dentre as quais:
 ## Questões Gerais:
 1) quantos restaurantes únicos estão registrados?
 2) Quantos países únicos estão registrados?
@@ -52,7 +52,7 @@ Nesse contexto, o CEO da empresa necessita identificar os pontos chaves da empre
 # [2] AS PREMISSAS DO NEGÓCIO
 O desenvolvimento do projeto tomou por base as seguintes premissas:
 I - base de dados com informações de restaurantes localizados em 15 países.
-II - marketplace foi o modelo de negócio assumido foi do tipo marketplace.
+II - o modelo de negócio assumido foi do tipo marketplace.
 III - as três principais visões de negócio foram: visão países, visão cidades e visão culinárias.
 
 # [3] ESTRATÉGIA DA SOLUÇÃO
