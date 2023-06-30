@@ -98,4 +98,4 @@ No painel, a visão de países indica a existência de grande potencial para cre
 O projeto pode ser aprimorado para: 
 - (i) incluir novos filtros de informações, de modo a aumentar a funcionalidade para o usuário,
 - (ii) adicionar novas visões de negócios, que permitam auxiliar a tomada de decisões gerenciais diferenciadas, de acordo com as características de cada país ou grupo de países, e
-- (iii) criar novos indicadores, voltados seja para o crescimento do negócio, seja para o aprimoramento da qualidade do serviço prestado.
+- (iii) criar novos indicadores, voltados tanto para o crescimento do negócio, quanto para o aprimoramento da qualidade do serviço prestado.
