@@ -60,6 +60,7 @@ O painel estratégico foi desenvolvido utilizando as métricas que refletem as t
 - Visão dos países em que a empresa atua,
 - Visão das cidades,
 - Visão dos tipos culinários.
+
 Cada visão está representada pelo seguinte conjunto de métricas:
 ## (1) Visão de Países:
 Quantidade de restaurantes registrados por país
