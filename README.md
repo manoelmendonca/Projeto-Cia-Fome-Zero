@@ -90,6 +90,8 @@ Cada visão está representada pelo seguinte conjunto de métricas:
 O painel pode ser acessado por meio do seguinte link: 
 - https://fomezero-iw9um7ljd7.streamlit.app/
 
+![banner](Painel.png)
+
 # [6] CONCLUSÃO
 O objetivo deste projeto foi o de criar um conjunto de gráficos e/ou tabelas para exibir as métricas do negócio da melhor forma possível para o CEO.
 No painel, a visão de países indica a existência de grande potencial para crescimento dos negócios.
