@@ -6,7 +6,7 @@
 # Arquivo . .: 3_CULINARIA.PY
 # Finalidade : Página da Visão Culinária
 #                                                              Start: 25.6.2023
-#                  manoelmendonca@hotmail.com                   Last: 27.6.2023
+#                                                              Last.: 27.6.2023
 #------------------------------------------------------------------------------
 
 import pandas as pd

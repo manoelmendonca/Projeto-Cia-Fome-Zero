@@ -6,7 +6,7 @@
 # Arquivo . .: 2_CIDADES.PY
 # Finalidade : Página da Visão Cidades
 #                                                              Start: 25.6.2023
-#                  manoelmendonca@hotmail.com                   Last: 27.6.2023
+#                                                              Last.: 27.6.2023
 #------------------------------------------------------------------------------
 
 # SOME REFERENCE:
