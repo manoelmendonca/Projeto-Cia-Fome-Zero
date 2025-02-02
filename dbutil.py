@@ -6,7 +6,7 @@
 # Arquivo . .: DBUTIL.PY
 # Finalidade : Classe para acesso aos dados
 #                                                              Start: 19.6.2023
-#                  manoelmendonca@hotmail.com                   Last: 28.6.2023
+#                                                              Last.: 28.6.2023
 #------------------------------------------------------------------------------
 
 import pandas as pd

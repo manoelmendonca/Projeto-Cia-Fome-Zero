@@ -6,7 +6,7 @@
 # Arquivo . .: HOME.PY
 # Finalidade : Página de apresentação do APP
 #                                                              Start: 18.6.2023
-#                  manoelmendonca@hotmail.com                   Last: 27.6.2023
+#                                                              Last.: 27.6.2023
 #------------------------------------------------------------------------------
 
 # SOME STREAMLIT REF:
